@@ -55,6 +55,7 @@ vector<string> wildcard(string pattern,vector<string> target) {
 			ret.push_back(target[i]);
 		}
 	}
+	sort(ret.begin(), ret.end());
 	return ret;
 }
 
