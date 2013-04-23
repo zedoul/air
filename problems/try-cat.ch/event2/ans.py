@@ -27,14 +27,17 @@ def flatten(l):
 	    return reduce(lambda x,y: x+[y] if type(y) != list else x+flatten(y), l,[])
 
 inp = []
-while 1:
+w = raw_input().split(' ')
+x = w 
+for i in range(len(w)-1):
 	x = raw_input().split(' ')
-	if ("" == x[0]):
-		lofl = max(snakegame(inp,0,w))
-		ret = flatten(lofl)
-		ret.reverse()
-		print ' '.join(map(str, ret))
-		break
-	w = len(x)
 	for t in x:
 		inp.append(int(t))
+for t in x:
+	inp.append(int(t))
+
+lofl = max(snakegame(inp,0,len(w)))
+ret = flatten(lofl)
+ret.reverse()
+print ' '.join(map(str, ret))
+
