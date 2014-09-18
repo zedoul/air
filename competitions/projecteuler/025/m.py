@@ -5,7 +5,6 @@ cache[1] = 1
 cache[2] = 1
 
 def _Fibonacci(i):
-    assert(i>=1)
     if not cache.has_key(i):
         cache[i] = cache[i-1] + cache[i-2]
     return cache[i]
