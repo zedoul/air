@@ -30,10 +30,9 @@ clf = mixture.GMM(n_components=2, covariance_type='full')
 clf.fit(l)
 
 for i in range(2):
-    
-print clf.weights_
-print clf.means_
-print clf.covars_
+    print clf.weights_
+    print clf.means_
+    print clf.covars_
 
 
 plt.show()

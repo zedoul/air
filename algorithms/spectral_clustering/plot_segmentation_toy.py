@@ -70,29 +70,41 @@ graph.data = np.exp(-graph.data / graph.data.std())
 
 # Force the solver to be arpack, since amg is numerically
 # unstable on this example
+print graph.shape
+print dir(graph)
+print type(graph)
+print graph.row
+print graph.col
+print len(graph.col)
+t = graph.todense()
+print t
+print np.sum(t[0,:])
+print graph.data[0,0]
+
 labels = spectral_clustering(graph, n_clusters=4, eigen_solver='arpack')
+print labels
 label_im = -np.ones(mask.shape)
 label_im[mask] = labels
 
 plt.matshow(img)
 plt.matshow(label_im)
 
-###############################################################################
-# 2 circles
-img = circle1 + circle2
-mask = img.astype(bool)
-img = img.astype(float)
-
-img += 1 + 0.2 * np.random.randn(*img.shape)
-
-graph = image.img_to_graph(img, mask=mask)
-graph.data = np.exp(-graph.data / graph.data.std())
-
-labels = spectral_clustering(graph, n_clusters=2, eigen_solver='arpack')
-label_im = -np.ones(mask.shape)
-label_im[mask] = labels
-
-plt.matshow(img)
-plt.matshow(label_im)
-
+################################################################################
+## 2 circles
+#img = circle1 + circle2
+#mask = img.astype(bool)
+#img = img.astype(float)
+#
+#img += 1 + 0.2 * np.random.randn(*img.shape)
+#
+#graph = image.img_to_graph(img, mask=mask)
+#graph.data = np.exp(-graph.data / graph.data.std())
+#
+#labels = spectral_clustering(graph, n_clusters=2, eigen_solver='arpack')
+#label_im = -np.ones(mask.shape)
+#label_im[mask] = labels
+#
+#plt.matshow(img)
+#plt.matshow(label_im)
+#
 plt.show()
