@@ -5,7 +5,7 @@ import random
 # likelihoods are constant
 p_1_given_a = 0.6
 p_0_given_a = 1 - p_1_given_a
-p_1_given_b = 0.2
+p_1_given_b = 0.4
 p_0_given_b = 1 - p_1_given_b
 
 # prior are flexiable
