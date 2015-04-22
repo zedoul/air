@@ -1,12 +1,11 @@
-library("devtools")
 library("CausalImpact")
 
 # data
 csv_data = read.csv('./correlate-yen_exchange_rate.csv')
 time.points <- as.Date(csv_data[,c(1,2)]$Date, "%Y-%m-%d")
 x1 <- 1:530 # predictor
+x2 <- 1:530 # predictor
 y <- csv_data$yen.exchange.rate #response variable
-data <- zoo(cbind(y, x1), time.points)
 pre.period <- c(1,470)
 post.period <- c(471,530)
 post.period.response <- y[post.period[1] : post.period[2]]
