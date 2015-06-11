@@ -25,7 +25,6 @@ int main() {
         foods[i].pos = malloc(1 * sizeof(struct Vec2d));
         foods[i].pos->x = 10+i;
         foods[i].pos->y = 100+i;
-
     }
     for (int i=0;i<number_of_foods;i++) {
         printf ("color %d\n", foods[i].color);
