@@ -1,6 +1,6 @@
 start_index <- 1
 
-d <- c(2,3,5,7,13,15,18,24,25,30,36,42,50,64,87,95,108,122,126,138,145)
+d <- c(2,3,5,7,13,15,18,24,25,30,36,42,50,64,87,95,108,122,126,138,145,150,154,162,162)
 d <- d[start_index:length(d)]
 patients_log <- log(d)
 
@@ -10,7 +10,7 @@ df <- data.frame(cbind(patients_log, x))
 names(df) <- c("y","x")
 fit <- lm("y ~ x", df)
 
-jpeg("./mers_patients_log.jpg")
+jpeg("./mers_patients_log.jpg",width=640,height=320)
 plot(patients_log)
 abline(fit)
 title(paste0("slope = ", toString(round(fit$coefficients[2],2))))
